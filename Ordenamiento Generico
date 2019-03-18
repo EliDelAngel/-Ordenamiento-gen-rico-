@@ -1,0 +1,70 @@
+public class Main {
+
+    public static void main (String [] args) {
+     
+Integer [] intVector = { 101, 99, 12, 19, 21, 111, 345, 25, 77, 81 };
+
+float [] floatVector = { 19.1f, 456.6f, 23.45f, 12.34f, 11.11f, 354.55f, 78.45f, 28.33f, 45.99f, 108.88f };
+
+String [] strVector = {"zz", "aa", "cc", "hh", "bb", "ee", "ll"};
+
+
+
+
+Integer [] result = Utilis.<Integer>ordena (intVector);
+
+
+    }
+    }
+    
+    //Otra Clase
+    
+    public class Utilis <T>  {
+  
+    public <T extends Number> Utilis (T []a) {
+        
+        T primero=a[0];
+        T ultimo=a[a.length-1];
+        
+
+    }
+
+
+public static <T extends Number> T[] Quick (T[]a,T primero,T ultimo) {
+   
+        T i= primero;
+        T j=ultimo;
+        T central;
+        central = a[(primero+ultimo/2)];
+        T temp;
+        do{
+            while(a[i]<=central)
+            {   
+                i++;  
+            }
+            while(central<a[j])
+            {
+                j--;
+            }
+                if(i<=j){
+                   temp=a[i];
+                   a[i]=a[j];
+                   a[j]=temp;
+                   i++;
+                   j--;
+                }
+        }while(i<=j);
+        if(j>=primero){
+        Quick(a,primero,j);
+        }
+        if(ultimo>i){
+            Quick(a,i,ultimo);
+        }
+        
+
+ return a;
+    }
+
+
+}
+ 
